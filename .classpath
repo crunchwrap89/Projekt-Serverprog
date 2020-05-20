@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Macoo/eclipse-workspace/UserManagementServerApplication/lib/jboss-javaee-all-7.0-1.0.3.Final.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-javaee-all-7.0-1.0.3.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

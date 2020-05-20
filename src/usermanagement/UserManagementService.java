@@ -7,6 +7,6 @@ import domain.User;
 public interface UserManagementService {
 
 	public void registerUser(User user);
-	public List<User>getAllEmployees();
-	public List<User>searchBySurname(String surname);
+	public List<User>getAllUsers();
+	public List<User>searchByUsername(String username);
 }

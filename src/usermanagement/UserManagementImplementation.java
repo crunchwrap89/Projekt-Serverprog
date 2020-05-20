@@ -28,7 +28,7 @@ public class UserManagementImplementation implements UserManagementService, User
 	@Override
 	public void registerUser(User user) {
 		dao.insert(user);
-		payrollSystem.enrollUser(user);
+		//payrollSystem.enrollUser(user);
 
 	}
 

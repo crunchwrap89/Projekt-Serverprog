@@ -14,7 +14,7 @@ import domain.User;
 
 
 @Stateless
-public class UserManagementImplementation implements UserManagementService {
+public class UserManagementImplementation implements UserManagementService, UserManagementServiceLocal {
 	
 	@Inject
 	private UserDataAccess dao;

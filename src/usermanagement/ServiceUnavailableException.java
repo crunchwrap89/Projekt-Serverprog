@@ -1,5 +1,5 @@
 package usermanagement;
 
-public class ServiceUnavailableException {
+public class ServiceUnavailableException extends Exception {
 
 }

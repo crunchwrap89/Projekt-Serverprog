@@ -10,6 +10,7 @@ public interface UserDataAccess {
 	public  void insert(User newUser);
 	public  List<User> findAll();
 	public  List<User> findBySurname(String surname);
+	public User findById(int id);
 
 }
 

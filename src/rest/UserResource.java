@@ -9,8 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.Service;
-
 import domain.User;
 import usermanagement.UserManagementServiceLocal;
 

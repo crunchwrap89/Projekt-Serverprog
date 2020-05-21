@@ -38,5 +38,13 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 		q.setParameter("surname", surname);
 		return q.getResultList();
 	}
+	
+	@Override
+	public User findById(int id) {
+		Query q = em.createQuery("select user from User user where user.id = :id");
+		q.setParameter("id", id);
+		return (User)q.getSingleResult() ;
+	}
+
 
 }

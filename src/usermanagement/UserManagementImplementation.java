@@ -42,4 +42,9 @@ public class UserManagementImplementation implements UserManagementService, User
 		return dao.findBySurname(username);
 	}
 	
+	@Override
+	public User getById(int id) {
+		return dao.findById(id);
+	}
+	
 }

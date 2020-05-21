@@ -14,5 +14,7 @@ public interface UserManagementServiceLocal {
 	public List<User> getAllUsers();
 
 	public List<User> searchByUsername(String username);
+	
+	public User getById(int id);
 
 }

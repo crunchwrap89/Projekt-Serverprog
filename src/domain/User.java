@@ -9,6 +9,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 public class User implements java.io.Serializable {
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setFirstName(String firstName) {
+		this.name = firstName;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;

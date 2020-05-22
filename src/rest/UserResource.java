@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import domain.User;
+import domain.User1;
 import usermanagement.ServiceUnavailableException;
 import usermanagement.UserManagementServiceLocal;
 
@@ -24,21 +24,21 @@ public class UserResource {
 	
 	@GET
 	@Produces("application/XML")
-	public List<User> getAllUsers() {
+	public List<User1> getAllUsers() {
 		return service.getAllUsers();
 	}
 	
 	@GET
 	@Produces("application/XML")
 	@Path("{userNo}")
-	public User findUserById(@PathParam("UserNo") int id) {
+	public User1 findUserById(@PathParam("UserNo") int id) {
 		return service.getById(id);
 	}
 	
 	@POST
 	@Produces("application/XML")
 	@Consumes("application/XML")
-	public User createUser(User user) {
+	public User1 createUser(User1 user) {
 		try {
 			service.registerUser(user);
 		} catch (ServiceUnavailableException e) {

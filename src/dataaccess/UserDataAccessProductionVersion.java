@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import domain.User;
+import domain.User1;
 
 
 @Stateless
@@ -21,29 +21,29 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 	private EntityManager em;
 	
 	@Override
-	public void insert(User newUser) {
+	public void insert(User1 newUser) {
 		em.persist(newUser);
 	}
 
 	@Override
-	public List<User> findAll() {
-		Query q = em.createQuery("select user from User user");
-		List<User> users = q.getResultList();
+	public List<User1> findAll() {
+		Query q = em.createQuery("select user1 from User1 user1");
+		List<User1> users = q.getResultList();
 		return users;
 	}
 
 	@Override
-	public List<User> findBySurname(String surname) {
-		Query q = em.createQuery("select user from User user where user.surname = :surname");
+	public List<User1> findBySurname(String surname) {
+		Query q = em.createQuery("select user1 from User1 user1 where user1.surname = :surname");
 		q.setParameter("surname", surname);
 		return q.getResultList();
 	}
 	
 	@Override
-	public User findById(int id) {
-		Query q = em.createQuery("select user from User user where user.id = :id");
+	public User1 findById(int id) {
+		Query q = em.createQuery("select user1 from User1 user1 where user.id = :id");
 		q.setParameter("id", id);
-		return (User)q.getSingleResult() ;
+		return (User1)q.getSingleResult() ;
 	}
 
 

@@ -4,17 +4,17 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import domain.User;
+import domain.User1;
 
 @Local
 public interface UserManagementServiceLocal {
 
-	public void registerUser(User user) throws ServiceUnavailableException;
+	public void registerUser(User1 user) throws ServiceUnavailableException;
 
-	public List<User> getAllUsers();
+	public List<User1> getAllUsers();
 
-	public List<User> searchByUsername(String username);
+	public List<User1> searchByUsername(String username);
 	
-	public User getById(int id);
+	public User1 getById(int id);
 
 }

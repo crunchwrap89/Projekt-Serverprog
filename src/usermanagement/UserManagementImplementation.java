@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import usermanagement.ExternalPayrollSystem;
 
 import dataaccess.UserDataAccess;
-import domain.User;
+import domain.User1;
 
 
 @Stateless
@@ -26,24 +26,24 @@ public class UserManagementImplementation implements UserManagementService, User
 	private SessionContext ctx;
 	
 	@Override
-	public void registerUser(User user) {
+	public void registerUser(User1 user) {
 		dao.insert(user);
 		//payrollSystem.enrollUser(user);
 
 	}
 
 	@Override
-	public List<User>getAllUsers() {
+	public List<User1>getAllUsers() {
 		return dao.findAll();
 	}
 
 	@Override
-	public List<User> searchByUsername(String username) {
+	public List<User1> searchByUsername(String username) {
 		return dao.findBySurname(username);
 	}
 	
 	@Override
-	public User getById(int id) {
+	public User1 getById(int id) {
 		return dao.findById(id);
 	}
 	

@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class User implements java.io.Serializable {
+public class User1 implements java.io.Serializable {
 	
 	public int getId() {
 		return id;
@@ -35,11 +35,11 @@ public class User implements java.io.Serializable {
 	private String name;
 	private String surname;
 	
-	public User() {
+	public User1() {
 		
 	}
 	
-	public User(String name, String surname) {
+	public User1(String name, String surname) {
 		this.name = surname;
 		this.surname = surname;
 	}

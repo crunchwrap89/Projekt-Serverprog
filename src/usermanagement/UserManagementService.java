@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import domain.User;
+import domain.User1;
 
 @Remote
 public interface UserManagementService extends UserManagementServiceLocal {

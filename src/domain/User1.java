@@ -19,8 +19,8 @@ public class User1 implements java.io.Serializable {
 	public String getName() {
 		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.name = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getSurname() {
 		return surname;
@@ -40,7 +40,7 @@ public class User1 implements java.io.Serializable {
 	}
 	
 	public User1(String name, String surname) {
-		this.name = surname;
+		this.name = name;
 		this.surname = surname;
 	}
 	

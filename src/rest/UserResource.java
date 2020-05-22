@@ -31,7 +31,7 @@ public class UserResource {
 	@GET
 	@Produces("application/XML")
 	@Path("{userNo}")
-	public User1 findUserById(@PathParam("UserNo") int id) {
+	public User1 findUserById(@PathParam("userNo") int id) {
 		return service.getById(id);
 	}
 	

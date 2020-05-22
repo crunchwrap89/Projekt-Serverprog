@@ -41,7 +41,7 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 	
 	@Override
 	public User1 findById(int id) {
-		Query q = em.createQuery("select user1 from User1 user1 where user.id = :id");
+		Query q = em.createQuery("select user1 from User1 user1 where user1.id = :id");
 		q.setParameter("id", id);
 		return (User1)q.getSingleResult() ;
 	}

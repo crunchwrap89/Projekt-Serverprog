@@ -25,12 +25,6 @@ public class UserManagementImplementation implements UserManagementService, User
 	@Resource
 	private SessionContext ctx;
 	
-//	@Override
-//	public void registerUser(User1 user) {
-//		dao.insert(user);
-//		//payrollSystem.enrollUser(user);
-//
-//	}
 	@Override
 	public void registerUser(User1 user) throws ServiceUnavailableException {
 	    dao.insert(user);

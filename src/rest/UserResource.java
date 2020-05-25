@@ -43,7 +43,7 @@ public class UserResource {
 		try {
 			service.registerUser(user);
 		} catch (ServiceUnavailableException e) {
-			// TODO Fix this later!
+			System.out.println("Något gick fel, rollback har initierats");
 			e.printStackTrace();
 		}
 		return user;

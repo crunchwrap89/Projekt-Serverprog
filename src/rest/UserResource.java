@@ -53,7 +53,11 @@ public class UserResource {
 	@Produces("application/XML")
 	@Consumes("application/XML")
 	@Path("{userNo}")
-	public void editUser(@PathParam("userNo") int id, String name, String surname) {
-		service.editAbuzer(id, name, surname);
+	public void editUser(@PathParam("userNo") int id, User1 user) {
+		User1 existinguser = service.getById(id);
+		if (existinguser != null) {
+			service.updateUser(id, existinguser.getName(), existinguser.getSurname());
+		}
+		
 	}
 }

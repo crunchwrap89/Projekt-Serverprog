@@ -52,7 +52,7 @@ public class UserManagementImplementation implements UserManagementService, User
 	}
 	
 	@Override
-	public void editAbuzer(int id, String name, String surname) {
+	public void updateUser(int id, String name, String surname) {
 		dao.editUser(id, name, surname);
 	}
 	

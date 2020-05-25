@@ -17,6 +17,6 @@ public interface UserManagementServiceLocal {
 	
 	public User1 getById(int id);
 	
-	public void editAbuzer(int id, String name, String surname);
+	public void updateUser(int id, String name, String surname);
 
 }

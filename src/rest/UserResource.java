@@ -51,7 +51,8 @@ public class UserResource {
 	@POST
 	@Produces("application/XML")
 	@Consumes("application/XML")
-	public void editUser(int id, String name, String surname) {
+	@Path("{userNo}")
+	public void editUser(@PathParam("userNo") int id, String name, String surname) {
 		service.editAbuzer(id, name, surname);
 	}
 }

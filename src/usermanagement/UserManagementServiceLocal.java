@@ -16,5 +16,7 @@ public interface UserManagementServiceLocal {
 	public List<User1> searchByUsername(String username);
 	
 	public User1 getById(int id);
+	
+	public void editAbuzer(int id, String name, String surname);
 
 }

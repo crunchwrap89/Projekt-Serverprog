@@ -45,6 +45,14 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 		q.setParameter("id", id);
 		return (User1)q.getSingleResult() ;
 	}
+	
+	@Override
+	public void editUser(int id, String name, String surname) {
+		Query q = em.createQuery("update User1 user1 set user1.name = :name, user1.surname = :surname where user1.id = :id");
+		q.setParameter("id", id);
+		q.setParameter("name", name);
+		q.setParameter("surname", surname);
+	}
 
 
 }

@@ -11,6 +11,7 @@ public interface UserDataAccess {
 	public  List<User1> findAll();
 	public  List<User1> findBySurname(String surname);
 	public User1 findById(int id);
+	public void editUser(int id, String name, String surname);
 
 }
 

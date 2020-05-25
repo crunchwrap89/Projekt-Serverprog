@@ -46,5 +46,12 @@ public class UserResource {
 			e.printStackTrace();
 		}
 		return user;
-	} 
+	}
+	
+	@POST
+	@Produces("application/XML")
+	@Consumes("application/XML")
+	public void editUser(int id, String name, String surname) {
+		service.editAbuzer(id, name, surname);
+	}
 }

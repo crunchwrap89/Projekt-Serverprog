@@ -51,4 +51,9 @@ public class UserManagementImplementation implements UserManagementService, User
 		return dao.findById(id);
 	}
 	
+	@Override
+	public void editAbuzer(int id, String name, String surname) {
+		dao.editUser(id, name, surname);
+	}
+	
 }

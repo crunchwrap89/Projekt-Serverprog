@@ -7,7 +7,7 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import usermanagement.ExternalPayrollSystem;
+import usermanagement.CrashSimulator;
 
 import dataaccess.UserDataAccess;
 import domain.User1;
@@ -20,20 +20,20 @@ public class UserManagementImplementation implements UserManagementService, User
 	private UserDataAccess dao;
 	
 	@Inject
-	private ExternalPayrollSystem payrollSystem;
+	private CrashSimulator payrollSystem;
 	
 	@Resource
 	private SessionContext ctx;
 	
 	@Override
 	public void registerUser(User1 user) throws ServiceUnavailableException {
-	    dao.insert(user);
-	    try {
-	        payrollSystem.enrollUser(user);
-	    }catch (ServiceUnavailableException e) {
-	        ctx.setRollbackOnly();
-	        throw e;
-	    }
+		dao.insert(user);
+//	    try {
+//	        payrollSystem.enrollUser(user);
+//	    }catch (ServiceUnavailableException e) {
+//	        ctx.setRollbackOnly();
+//	        throw e;
+//	    }
 	}
 
 	@Override

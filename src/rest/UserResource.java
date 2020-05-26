@@ -73,7 +73,7 @@ public class UserResource {
 	
 	@DELETE
 	@Path("{userNo}")
-	public Response deleteEmployee(@PathParam("userNo") int id) {
+	public Response deleteUser(@PathParam("userNo") int id) {
 	    try {
 	        service.deleteUser(id);
 	        return Response.status(204).build();

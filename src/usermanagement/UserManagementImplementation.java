@@ -21,7 +21,7 @@ public class UserManagementImplementation implements UserManagementService, User
 	private UserDataAccess dao;
 	
 	@Inject
-	private CrashSimulator payrollSystem;
+	private CrashSimulator crashSim;
 	
 	@Resource
 	private SessionContext ctx;
@@ -30,10 +30,11 @@ public class UserManagementImplementation implements UserManagementService, User
 	public void registerUser(User1 user) throws ServiceUnavailableException {
 		dao.insert(user);
 //	    try {
-//	        payrollSystem.enrollUser(user);
+//	        crashSim.enrollUser(user);
 //	    }catch (ServiceUnavailableException e) {
 //	        ctx.setRollbackOnly();
-//	        throw e;
+//	        System.out.println("Felsimulering, registrering backas.");
+//	        throw e;	        
 //	    }
 	}
 

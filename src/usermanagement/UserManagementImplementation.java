@@ -28,13 +28,13 @@ public class UserManagementImplementation implements UserManagementService, User
 	@Override
 	public void registerUser(User1 user) throws ServiceUnavailableException {
 		dao.insert(user);
-	    try {
-	        crashSim.enrollUser(user);
-	    }catch (ServiceUnavailableException e) {
-	        ctx.setRollbackOnly();
-	        throw e;
-	        
-	    }
+//	    try {
+//	        crashSim.enrollUser(user);
+//	    }catch (ServiceUnavailableException e) {
+//	        ctx.setRollbackOnly();
+//	        System.out.println("Felsimulering, registrering backas.");
+//	        throw e;	        
+//	    }
 	}
 
 	@Override

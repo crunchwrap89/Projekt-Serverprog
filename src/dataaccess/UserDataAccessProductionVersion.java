@@ -40,7 +40,7 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 	}
 	
 	@Override
-	public User1 findById(int id) {
+	public User1 findById(int id) throws UserNotFoundException {
 		Query q = em.createQuery("select user1 from User1 user1 where user1.id = :id");
 		q.setParameter("id", id);
 		return (User1)q.getSingleResult() ;
@@ -53,6 +53,21 @@ public class UserDataAccessProductionVersion implements UserDataAccess {
 		q.setParameter("name", name);
 		q.setParameter("surname", surname);
 	}
+
+	@Override
+	public void updateUser(int id, String name, String surname) throws UserNotFoundException {
+		User1 urban = findById(id);
+		urban.setName(name);
+		urban.setSurname(surname);
+		
+	}
+
+	@Override
+	public void deleteUser(int id) throws UserNotFoundException {
+		User1 urban = findById(id);
+		em.remove(urban);
+	}
+	
 
 
 }

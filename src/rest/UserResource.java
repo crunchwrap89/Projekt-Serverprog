@@ -5,13 +5,16 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
+import dataaccess.UserNotFoundException;
 import domain.User1;
 import usermanagement.ServiceUnavailableException;
 import usermanagement.UserManagementServiceLocal;
@@ -32,8 +35,13 @@ public class UserResource {
 	@GET
 	@Produces("application/XML")
 	@Path("{userNo}")
-	public User1 findUserById(@PathParam("userNo") int id) {
-		return service.getById(id);
+	public Response findUserById(@PathParam("userNo") int id) {
+		try {
+			User1 result = service.getById(id);
+			return Response.ok(result).build(); 
+		} catch (UserNotFoundException e) {
+			return Response.status(404).build();
+		}
 	}
 	
 	@POST
@@ -53,11 +61,24 @@ public class UserResource {
 	@Produces("application/XML")
 	@Consumes("application/XML")
 	@Path("{userNo}")
-	public void editUser(@PathParam("userNo") int id, User1 user) {
-		User1 existinguser = service.getById(id);
-		if (existinguser != null) {
-			service.updateUser(id, existinguser.getName(), existinguser.getSurname());
+	public Response updateUser(@PathParam("userNo") int id, User1 user) {
+		try {
+			service.updateUser(id, user.getName(), user.getSurname());
+			return Response.ok(service.getById(id)).build();
+		} catch (UserNotFoundException e) {
+			return Response.status(404).build();
 		}
 		
+	}
+	
+	@DELETE
+	@Path("{userNo}")
+	public Response deleteEmployee(@PathParam("employeeNo") int id) {
+	    try {
+	        service.deleteUser(id);
+	        return Response.status(204).build();
+	    } catch (UserNotFoundException e) {
+	        return Response.status(404).build();
+	    }
 	}
 }

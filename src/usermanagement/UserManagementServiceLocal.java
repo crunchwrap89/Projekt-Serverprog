@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import dataaccess.UserNotFoundException;
 import domain.User1;
 
 @Local
@@ -15,8 +16,10 @@ public interface UserManagementServiceLocal {
 
 	public List<User1> searchByUsername(String username);
 	
-	public User1 getById(int id);
+	public User1 getById(int id) throws UserNotFoundException;
 	
-	public void updateUser(int id, String name, String surname);
+	public void updateUser(int id, String name, String surname) throws UserNotFoundException;
+	
+	public void deleteUser(int id) throws UserNotFoundException;
 
 }

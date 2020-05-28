@@ -6,18 +6,6 @@ Skriv sedan ./ij.bat och skriv in connect 'jdbc:derby://localhost:50000/UserMana
 
 Detta behöver man bara göra första gången
 
-Gå sedan till mappen du har wildfly i och navigera till configurationmappen och öppna standalone.xml. 
-Klistra in nedanstående mellan </datasource> och <drivers>
-
-<datasource jndi-name="java:/UserDatabase" pool-name="UserDatabase" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:derby://localhost:50000/UserManagement</connection-url>
-                    <driver>derbyclient.jar</driver>
-                    <security>
-                        <user-name>APP</user-name>
-                        <password>APP</password>
-                    </security>
-                </datasource>
-
 Starta sedan wildfly genom att gå till mappen där wildfly ligger och kör standalone.bat
 
 Kör sedan filen build.xml i projektet för att deploya projektet till servern. 

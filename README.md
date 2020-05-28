@@ -9,7 +9,7 @@ Detta behöver man bara göra första gången
 Gå sedan till mappen du har wildfly i och navigera till configurationmappen och öppna standalone.xml. 
 Klistra in nedanstående mellan </datasource> och <drivers>
 
-<datasource jndi-name="java:/EmployeeDatabase" pool-name="EmployeeDatabase"
+"<datasource jndi-name="java:/EmployeeDatabase" pool-name="EmployeeDatabase"
                              enabled="true" use-java-context="true">                      
      <connection-url>jdbc:derby://localhost:50000/EmployeeManagement
                                                      </connection-url>
@@ -18,7 +18,7 @@ Klistra in nedanstående mellan </datasource> och <drivers>
           <user-name>APP</user-name>
            <password>APP</password>
        </security>
-   </datasource>
+   </datasource>"
 
 Starta sedan wildfly genom att gå till mappen där wildfly ligger och kör standalone.bat
 

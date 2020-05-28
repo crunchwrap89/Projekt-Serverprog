@@ -4,7 +4,7 @@ Starta derby genom att gå till mappen där derby ligger och skriv ./NetworkServ
 
 Skriv sedan ./ij.bat och skriv in connect 'jdbc:derby://localhost:50000/UserManagement; create=true';
 
-Detta behöver man bara göra en första gången
+Detta behöver man bara göra första gången
 
 Gå sedan till mappen du har wildfly i och navigera till configurationmappen och öppna standalone.xml. 
 Klistra in nedanstående mellan </datasource> och <drivers>
